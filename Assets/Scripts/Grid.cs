@@ -19,14 +19,14 @@ public class Grid : MonoBehaviour {
 	}
 
 
-	private void OnDrawGizmos () {
-		Gizmos.color = Color.black;
-		if (vertices != null) {
-			for (int i = 0; i < vertices.Length; i++) {
-				Gizmos.DrawSphere(vertices[i], 0.1f);
-			}
-		}
-	}
+	// private void OnDrawGizmos () {
+	// 	Gizmos.color = Color.black;
+	// 	if (vertices != null) {
+	// 		for (int i = 0; i < vertices.Length; i++) {
+	// 			Gizmos.DrawSphere(vertices[i], 0.1f);
+	// 		}
+	// 	}
+	// }
 
 
 	private IEnumerator Generate () {
