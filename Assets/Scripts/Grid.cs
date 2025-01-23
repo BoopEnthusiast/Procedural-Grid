@@ -41,7 +41,7 @@ public class Grid : MonoBehaviour {
 		Vector4 tangent = new Vector4(1f, 0f, 0f, -1f);
 		for (int i = 0, y = 0; y <= ySize; y++) {
 			for (int x = 0; x <= xSize; x++, i++) {
-				vertices[i] = new Vector3(x, y);
+				vertices[i] = new Vector3(x, y, Random.Range((float)-1.0, (float)1.0));
 				uv[i] = new Vector2((float)x / xSize, (float)y / ySize);
 				tangents[i] = tangent;
 			}
