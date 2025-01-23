@@ -40,17 +40,19 @@ public class Grid : MonoBehaviour {
 		for (int i = 0, y = 0; y <= ySize; y++) {
 			for (int x = 0; x <= xSize; x++, i++) {
 				vertices[i] = new Vector3(x, y);
-				yield return wait;
 			}
 		}
 
 		mesh.vertices = vertices;
 
-		int[] triangles = new int[6];
-		triangles[0] = 0;
-		triangles[3] = triangles[2] = 1;
-		triangles[4] = triangles[1] = xSize + 1;
-		triangles[5] = xSize + 2;
-		mesh.triangles = triangles;
+		int[] triangles = new int[xSize * 6];
+		for (int ti = 0, vi = 0, x = 0; x < xSize; x++, ti += 6, vi++) {
+			triangles[ti] = vi;
+			triangles[ti + 3] = triangles[ti + 2] = vi + 1;
+			triangles[ti + 4] = triangles[ti + 1] = vi + xSize + 1;
+			triangles[ti + 5] = vi + xSize + 2;
+			mesh.triangles = triangles;
+			yield return wait;
+		}
 	}
 }
