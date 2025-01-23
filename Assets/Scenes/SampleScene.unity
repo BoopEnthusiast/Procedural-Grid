@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334ad4d37c1fb0293bd21ec00f445ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 10
+  xSize: 5
   ySize: 5
   waitTime: 0.18
 --- !u!23 &284275104
